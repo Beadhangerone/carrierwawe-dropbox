@@ -1,0 +1,14 @@
+<%=link_to 'add an image', new_image_path%>
+<br><br>
+
+<%@images.each do |image|%>
+	<div 
+	style="border: 1px solid black;
+	display: inline-block; padding: 10px;">
+		<center>
+			<img src="<%=image.avatar%>" style='height: 200px;'><br>
+		</center>
+		<%=link_to 'edit', edit_image_path(image)%>
+		<%=link_to 'delete', image_path(image), method: :delete%>
+	</div>
+<%end%>
